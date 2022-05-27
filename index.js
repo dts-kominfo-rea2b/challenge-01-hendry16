@@ -10,49 +10,35 @@ function user(name, gender, age, email, iHP){
     this.gender = gender;
     this.age = age;
     this.email = email;
+    this.favoriteColor = function(color){
+        this.favoriteColor = color;
+    }
     this.isHavePet = iHP;
+    this.favoriteRestaurant = function(favRest){
+        this.favoriteRestaurant = new Set(favRest);
+    }
 }
+firstUser = new user("Monika", "Female", 17, "monica@dingdong.com", "Yes");
+secondUser = new user("Wendy", "Male", 23, "wendy@dingdong.com", "No");
 
-// user's name, gender, age, email, iHP properties
-firstUser = new user("Monica", "Female", 17, "monica@dingdong.com", true);
-secondUser = new user("Wendy", "Male", 23, "wendy@dingdong.com", false);
+firstUser.favoriteColor([['Yellow', 'Pink', 'White', 'Purple']]);
+secondUser.favoriteColor([['Blue', 'Black', 'Grey']]);
 
+firstUser.favoriteRestaurant(['Bento', 'Sushi', 'Pancake', 'Eggy', 'Tempura', 'Bento', 'Eggy', 'Padang', 'Tteok', 'Sushi', 'Sushi']);
+secondUser.favoriteRestaurant(['Tempura', 'Bento', 'Sushi', 'Pancake', 'Padang', 'Katsu', 'Geprek', 'Pancake', 'Eggy']);
 
-// user's favorite color
-firstUser.favoriteColor = ['Yellow', 'Pink', 'White', 'Purple'];
-secondUser.favoriteColor = ['Blue', 'Black', 'Grey'];
+firstUser.education = [
+    {'name' : 'SD 01', 'city' : 'Jakarta', 'graduate' : 2016},
+    {'name' : 'SMP 02', 'city' : 'Jakarta', 'graduate' : 2019},
+    {'name' : 'SMA 03', 'city' : 'Tangerang'}
+];
 
-
-// user's favorite
-firstUser.favoriteRestaurant = new Set(['Bento', 'Sushi', 'Pancake', 'Eggy', 'Tempura', 'Bento', 'Eggy', 'Padang', 'Tteok', 'Sushi', 'Sushi']);
-secondUser.favoriteRestaurant = new Set(['Tempura', 'Bento', 'Sushi', 'Pancake', 'Padang', 'Katsu', 'Geprek', 'Pancake', 'Eggy']);
-
-
-// constructor function for user's education
-function educationUser1(name, city, graduate){
-    this.name = name;
-    this.city = city;
-    this.graduate = graduate;
-}
-let user1Edu1 = new educationUser1("SD 01", "Jakarta", 2016);
-let user1Edu2 = new educationUser1("SMP 02", "Jakarta", 2019);
-let user1Edu3 = new educationUser1("SMA 03", "Tangerang");
-
-
-function educationUser2(name, city, graduate){
-    this.name = name;
-    this.city = city;
-    this.graduate = graduate;
-}
-let user2Edu1 = new educationUser2("SD 02", "Jakarta", 2010);
-let user2Edu2 = new educationUser2("SMP 03", "Bogor", 2013);
-let user2Edu3 = new educationUser2("SMA 01", "Surabaya", 2016);
-let user2Edu4 = new educationUser2("Universitas Maju", "Tangerang");
-
-
-// assign user's education to be an array
-firstUser.education = [user1Edu1, user1Edu2, user1Edu3];
-secondUser.education = [user2Edu1, user2Edu2, user2Edu3, user2Edu4];
+secondUser.education = [
+    {'name' : 'SD 02', 'city' : 'Jakarta', 'graduate' : 2010},
+    {'name' : 'SMP 03', 'city' : 'Bogor', 'graduate' : 2013},
+    {'name' : 'SMA 03', 'city' : 'Surabaya', 'graduate' : 2016},
+    {'name' : 'Universitas Maju', 'city' : 'Tangerang'}
+];
 
 
 // TODO: Masukkan hasil akhir dari kedua user di sini
